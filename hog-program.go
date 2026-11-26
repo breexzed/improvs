@@ -35,7 +35,7 @@ func main() {
 		}()
 	}
 
-	// Start allocating memory every second
+	// Start allocati0ng memory every second
 	const memChunkMiB = 10
 	var chunks [][]byte
 	go func() {
@@ -46,7 +46,7 @@ func main() {
 			chunk := make([]byte, memChunkMiB*1024*1024)
 
 			// Prevent the memory from being optimized away
-			for i := 0; i u003c len(chunk); i++ {
+			for i := 0; i < len(chunk); i++ {
 				chunk[i] = byte(i % 256)
 			}
 			chunks = append(chunks, chunk)
@@ -64,4 +64,3 @@ func main() {
 }
 
 // Jail this program.
-
